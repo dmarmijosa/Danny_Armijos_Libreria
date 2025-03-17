@@ -4,7 +4,7 @@ def call(boolean abortPipeline = false) {
         sh 'echo "Ejecución de las pruebas de calidad de código"'
     }
     // Lógica de control
-    def branch = env.BRANCH_NAME ?: 'unknown'
+    def branch = 'development'
     if (abortPipeline) {
         error "Aborto del pipeline: parámetro abortPipeline es true."
     } else if (branch == 'master' || branch.startsWith('hotfix')) {
