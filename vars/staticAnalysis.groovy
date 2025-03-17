@@ -7,7 +7,7 @@ def call(boolean abortPipeline = false) {
     def branch = env.BRANCH_NAME ?: 'unknown'
     if (abortPipeline) {
         error "Aborto del pipeline: parámetro abortPipeline es true."
-    } else if (branch == 'master' || branch.startsWith('hotfix')) {
+    } else if (branch == 'main' || branch.startsWith('hotfix')) {
         error "Aborto del pipeline: rama '${branch}' no es permitida."
     } else {
         echo "Continuando ejecución, rama '${branch}' es permitida."
